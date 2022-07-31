@@ -12,9 +12,10 @@ def norm(img):
 	return norm_img
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(BASE_DIR,"output")
 image_dir = os.path.join(BASE_DIR, "images")
 
-splitfolders.ratio(image_dir,'C:/Users/naila/OneDrive/Bureau/test/output/',seed=1337,ratio=(0.8,0.2))
+splitfolders.ratio(image_dir,output_dir,seed=1337,ratio=(0.8,0.2))
 
 face_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
